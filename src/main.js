@@ -101,7 +101,7 @@ function analyzeSalesData(data, options) {
         });
 
     // @TODO: Сортировка продавцов по прибыли
-    const topSellers = Object.values(sellerIndex).toSorted((a, b) => b.profit - a.profit); 
+    const topSellers = Object.values(sellerIndex).sort((a, b) => b.profit - a.profit); 
     
     // @TODO: Назначение премий на основе ранжирования
     topSellers.forEach((seller, index) => {
