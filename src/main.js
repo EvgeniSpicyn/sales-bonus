@@ -48,6 +48,7 @@ function analyzeSalesData(data, options) {
         ||data.sellers.length === 0
         ||data.customers.length === 0
         ||data.products.length ===0
+        ||data.purchase_records.length ===0
     ) {
         throw new Error('Некорректные входные данные');
     }
@@ -101,7 +102,7 @@ function analyzeSalesData(data, options) {
         });
 
     // @TODO: Сортировка продавцов по прибыли
-    const topSellers = Object.values(sellerIndex).toSorted((a, b) => b.profit - a.profit); 
+    const topSellers = [...Object.values(sellerIndex)].sort((a, b) => b.profit - a.profit); 
     
     // @TODO: Назначение премий на основе ранжирования
     topSellers.forEach((seller, index) => {
