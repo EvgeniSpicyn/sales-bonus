@@ -113,7 +113,7 @@ function analyzeSalesData(data, options) {
         }));
         seller.products_sold = productSeller.sort((a, b) => b.quantity - a.quantity).slice(0, 10);
     });
-    
+    console.log(topSellers);
     // @TODO: Подготовка итоговой коллекции с нужными полями
     return topSellers.map(seller => ({
         seller_id: seller.id,
